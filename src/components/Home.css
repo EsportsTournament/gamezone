@@ -1,0 +1,55 @@
+/* src/pages/Home.css */
+.home-container {
+    text-align: center;
+    margin-top: 50px;
+    background: linear-gradient(to bottom, #ff7e5f, #feb47b);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+h1 {
+    color: #fff;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.name-input,
+.code-input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    width: 80%;
+    max-width: 300px;
+}
+
+.enter-code-button,
+.generate-code-button,
+.submit-code-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #ff7e5f;
+    font-size: 1rem;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.enter-code-button:disabled,
+.generate-code-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.code-input-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.submit-code-button {
+    padding: 10px;
+    border-radius: 50%;
+    margin-left: 10px;
+}
