@@ -1,55 +1,141 @@
-/* src/pages/Home.css */
-.home-container {
-    text-align: center;
-    margin-top: 50px;
-    background: linear-gradient(to bottom, #ff7e5f, #feb47b);
-    padding: 20px;
-    border-radius: 10px;
-}
-
-h1 {
-    color: #fff;
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-}
-
-.name-input,
-.code-input {
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    width: 80%;
-    max-width: 300px;
-}
-
-.enter-code-button,
-.generate-code-button,
-.submit-code-button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: #fff;
-    color: #ff7e5f;
-    font-size: 1rem;
-    cursor: pointer;
-    margin: 5px;
-}
-
-.enter-code-button:disabled,
-.generate-code-button:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
-}
-
-.code-input-container {
+/* General Styling */
+ 
+  .home-page {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-}
+    height: 100vh;
+  }
+  
+  
+  .header {
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    width: 100%;
+    margin: 10px 20px 0 0;
+    color: white;
+  }
+  
+  .header-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .login-button {
+    cursor: pointer;
+    position: relative;
+    padding: 10px 24px;
+    font-size: 18px;
+    color: black;
+    border: 2px solid white;
+    text-decoration: none;
+    border-radius: 34px;
+    background-color: transparent;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+    overflow: hidden;
+  }
+  
+  .login-button::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    margin: 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: inherit;
+    scale: 0;
+    z-index: -1;
+    background-color: white;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+  }
+  
+  .login-button:hover::before {
+    scale: 3;
+  }
+  
+  .login-button:hover {
+    color: #212121;
+    scale: 1.1;
+    box-shadow: 0 0px 20px rgba(240, 239, 236, 0.4);
+  }
+  
+  .login-button:active {
+    scale: 1;
+  }
+  
+  /* Center Box */
+  .center-box {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .center-title {
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  /* Input Box */
+  .input-box {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    max-width: 300px;
+    
+  }
 
-.submit-code-button {
+  .game-pin-box {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 95px;
+    width: 100%;
+  }
+  
+  .game-pin-input {
+    padding: 10px 0;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: none;
+    width: 100%;
+    text-align: center;
+    outline: none;
+  }
+  
+  .enter-button {
     padding: 10px;
-    border-radius: 50%;
-    margin-left: 10px;
-}
+    font-size: 1rem;
+    background-color: #000;
+    color: white;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .enter-button:hover {
+    background-color: #333;
+  }
+  
+  /* Footer Styling */
+  .footer {
+    text-align: center;
+    font-size: 0.9rem;
+    padding: 10px 0;
+  }
+  
+  .footer a {
+    color:rgb(16, 25, 22); /* Yellow link */
+    text-decoration: none;
+    cursor: pointer;
+  }
+ 
+  
+
+  
