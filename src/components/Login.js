@@ -5,11 +5,32 @@ import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
 
+const toastSuccessConfig =  {
+  position: "bottom-center",
+  autoClose: 5000,
+  hideProgressBar: false,
+  closeOnClick: true,
+  pauseOnHover: true,
+  draggable: true,
+  progress: undefined,
+  theme: "dark",
+  transition: Bounce,
+};
+
+const toastErrorConfig =  {
+  position: "bottom-center",
+  autoClose: 5000,
+  hideProgressBar: false,
+  closeOnClick: true,
+  pauseOnHover: true,
+  draggable: true,
+  progress: undefined,
+  theme: "dark",
+  transition: Bounce,
+};
+
 const Login = () => {
   const navigate = useNavigate();
-  const handleRegisterBtnClick = () => {
-    navigate("/register"); // Navigate to the Register page
-  };
   const [loginForm, setLoginForm] = useState({ email: "", password: "" });
   const [registerForm, setRegisterForm] = useState({
     username: "",
@@ -28,9 +49,10 @@ const Login = () => {
         "http://localhost:5000/api/auth/register",
         registerForm
       );
-      alert(res.data.message);
+      toast.success(res.data.message, toastSuccessConfig);
+      handleLoginClick();
     } catch (err) {
-      alert(err.response.data.error);
+      toast.error(err.response.data.error, toastErrorConfig);
     }
   };
 
@@ -51,30 +73,10 @@ const Login = () => {
         loginForm
       );
       localStorage.setItem("token", res.data.token);
-      toast.success(`Welcome ${res.data.username}`, {
-        position: "bottom-center",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "dark",
-        transition: Bounce,
-      });
+      toast.success(`Welcome ${res.data.username}`, toastSuccessConfig);
       generateCode();
     } catch (err) {
-      toast.error(err.response.data.message, {
-        position: "bottom-center",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "dark",
-        transition: Bounce,
-      });
+      toast.error(err.response.data.message, toastErrorConfig);
     }
   };
   const containerRef = useRef(null);
@@ -157,7 +159,6 @@ const Login = () => {
             <button
               type="submit"
               className="btn"
-              onClick={handleRegisterBtnClick}
             >
               Register
             </button>

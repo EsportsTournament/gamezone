@@ -10,14 +10,14 @@ import React from 'react';
 const Home = () => {
   return (
     <div className="home-page">
-      {/* Header Section */}
+     
       <header className="header">
         <div className="header-buttons">
           <button className="login-button"><Link to='/login'>Login</Link></button>
         </div>
       </header>
 
-      {/* Center Section */}
+     
       <div className="center-box">
         <h1 className="center-title">GameZone</h1>
         <div className="game-pin-box">
@@ -30,7 +30,7 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Footer */}
+      
       <footer className="footer">
         <p>
          <Link to='/login'>Login</Link> to Create your own GameZone for FREE
